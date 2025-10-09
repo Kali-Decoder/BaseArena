@@ -3,13 +3,13 @@
 "use client"
 import React from 'react';
 import { useGameLogic } from '../../hooks/useGameLogic';
-import GameHUD from '../../components/GameHUD';
-import LevelInfo from '../../components/LevelInfo';
-import GameGrid from '../../components/GameGrid';
-import Timer from '../../components/Timer';
-import WinModal from '../../components/WinModal';
-import BackgroundElements from '../../components/BackgroundElements';
-import GameAnimations from '../../components/GameAnimations';
+import GameHUD from '../../components/connector/GameHUD';
+import LevelInfo from '../../components/connector/LevelInfo';
+import GameGrid from '../../components/connector/GameGrid';
+import Timer from '../../components/connector/Timer';
+import WinModal from '../../components/connector/WinModal';
+import BackgroundElements from '../../components/connector/BackgroundElements';
+import GameAnimations from '../../components/connector/GameAnimations';
 
 const ConnectorPage = () => {
   const {
