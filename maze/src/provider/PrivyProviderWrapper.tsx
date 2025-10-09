@@ -1,16 +1,17 @@
 "use client";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createConfig, WagmiProvider } from '@privy-io/wagmi';
-import {  mainnet, sepolia } from 'viem/chains';
+import {  mainnet, sepolia,monadTestnet } from 'viem/chains';
 import { http } from 'wagmi';
 import { PrivyProvider } from "@privy-io/react-auth";
 import { ReactNode, StrictMode } from "react";
 
 export const config = createConfig({
-  chains: [sepolia, mainnet],  // add any common chains
+  chains: [sepolia, mainnet,monadTestnet],  // add any common chains
   transports: {
     [sepolia.id]: http(),
-    [mainnet.id]: http()
+    [mainnet.id]: http(),
+    [monadTestnet.id]: http()
   },
 });
 export default function PrivyProviderWrapper({ children }: { children: ReactNode }) {
