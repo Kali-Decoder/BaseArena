@@ -27,10 +27,17 @@ yarn-error.log*
 
 # local env files
 .env*.local
-
+.env
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/v1
+/v2
+/multisynq
+/dotgame
+plan.txt
+task.txt
