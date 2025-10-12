@@ -43,25 +43,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         className={`${ropa.variable} ${chakra.variable} ${dmSans.variable}`}
       >
         <Suspense fallback={null}>
-          {process.env.NEXT_PUBLIC_ENABLE_PRIVY !== "false" ? (
-            <PrivyProviderWrapper>
-              <PrivyAuthProvider>
-                {children}
-                <Toaster
-                  position="top-center"
-                  toastOptions={{
-                    style: {
-                      background: "black",
-                      border: "1px solid white",
-                      color: "white",
-                      borderRadius: "0px",
-                    },
-                  }}
-                />
-              </PrivyAuthProvider>
-            </PrivyProviderWrapper>
-          ) : (
-            <>
+          <PrivyProviderWrapper>
+            <PrivyAuthProvider>
               {children}
               <Toaster
                 position="top-center"
@@ -74,8 +57,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   },
                 }}
               />
-            </>
-          )}
+            </PrivyAuthProvider>
+          </PrivyProviderWrapper>
         </Suspense>
       </body>
     </html>

@@ -1,11 +1,5 @@
-"use client";
-import LoginButton from '@/components/LoginButton'
-import React from 'react'
+import { redirect } from "next/navigation";
 
-const page = () => {
-  return (
-    <LoginButton/>
-  )
+export default function Page() {
+  redirect("/dotgame");
 }
-
-export default page
