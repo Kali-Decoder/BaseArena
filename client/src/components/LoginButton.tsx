@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
@@ -5,13 +6,14 @@ import { usePrivyAuth } from "@/context/PrivyAuthProvider";
 import { useUniversalWalletClient } from "@/hooks/useWalletClient";
 import { Copy } from "lucide-react";
 import toast from "react-hot-toast";
-import { sepolia } from "viem/chains";
+import { baseSepolia } from "viem/chains";
+import { useSwitchChain } from "wagmi";
 
 
 
 export default function LoginButton() {
   const { customizeLogin, logout, address, authenticated } = usePrivyAuth();
-  const { chainId,  getWalletClient } = useUniversalWalletClient();
+  const { chainId, getWalletClient } = useUniversalWalletClient();
   const shortAddress = address ? `${address.slice(0, 4)}...${address.slice(-4)}` : "";
 
   const copyToClipboard = async () => {
@@ -24,14 +26,15 @@ export default function LoginButton() {
   const handleSwitchChain = async () => {
     try {
       const walletClient = await getWalletClient();
-      await walletClient.switchChain({ id: sepolia.id });
-      toast.success("Switched to Sepolia network");
-    } catch {
+      await walletClient.switchChain({ id: baseSepolia.id });
+      toast.success("Switched to base Sepolia network");
+    } catch(E: any) {
+      console.error("Failed to switch chain. Please switch manually.", E);
       toast.error("Failed to switch chain. Please switch manually.");
     }
   };
 
-  const isSepolia = chainId === sepolia.id;
+  const isBaseSepolia = chainId === baseSepolia.id;
 
   return (
     <div className="flex flex-col items-center gap-4 p-6">
@@ -54,12 +57,12 @@ export default function LoginButton() {
             </button>
           </div>
 
-          {!isSepolia && (
+          {!isBaseSepolia && (
             <button
               onClick={handleSwitchChain}
               className="bg-amber-500 hover:bg-amber-600 font-ropa text-gray-900 px-4 py-3 font-medium text-sm rounded-lg transition-colors duration-200 shadow-md"
             >
-              Switch to Sepolia
+              Switch to Base Sepolia
             </button>
           )}
         </div>

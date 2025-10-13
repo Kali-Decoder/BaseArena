@@ -66,7 +66,6 @@ export interface WalletAdapter {
   signMessage(params: SignMessageParams): Promise<string>;
   signTypedData(params: SignTypedDataParams): Promise<string>;
   sendTransaction(params: SendTransactionParams): Promise<string>;
-  switchChain(chainId: number): Promise<void>;
   getCapabilities(): WalletCapabilities;
 }
 
