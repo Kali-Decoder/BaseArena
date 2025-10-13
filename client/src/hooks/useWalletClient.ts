@@ -2,6 +2,7 @@
 import { useWalletClient, useAccount, usePublicClient } from "wagmi";
 import { usePrivy } from "@privy-io/react-auth";
 import { createWalletClient, custom, WalletClient } from "viem";
+import { baseSepolia } from "viem/chains";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { WalletManagerService } from "@/services/WalletManager";
 import { WalletType, WalletInfo, WalletError } from "@/types/wallet";
@@ -65,7 +66,7 @@ export function useUniversalWalletClient() {
           if (typeof window !== 'undefined' && (window as any).ethereum) {
             return createWalletClient({
               account: info.address,
-              chain: publicClient?.chain,
+              chain: baseSepolia,
               transport: custom((window as any).ethereum as any),
             });
           }
@@ -93,7 +94,7 @@ export function useUniversalWalletClient() {
 
           return createWalletClient({
             account: info.address,
-            chain: publicClient?.chain,
+            chain: baseSepolia,
             transport: custom(provider),
           });
 
@@ -122,6 +123,6 @@ export function useUniversalWalletClient() {
       walletManager.refresh();
       const info = walletManager.getWalletInfo();
       setWalletInfo(info);
-    },
+    }
   };
 }
