@@ -29,16 +29,14 @@ export function useMazeTransactions() {
       to: GAME_CONTRACT_ADDRESS_MAZE,
       chainId: (client as any).chain?.id,
     });
-
-    try {
-        
+    try {   
+      
       const txHash = await client.sendTransaction({
         account: sender,
         to: GAME_CONTRACT_ADDRESS_MAZE as Hex,
         data,
         chain: baseSepolia,
       });
-
       console.log("playMove -> txHash", txHash);
       toast(`Transaction sent: ${txHash}`);
 

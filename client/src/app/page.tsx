@@ -1,10 +1,11 @@
 "use client";
-import LoginButton from '@/components/LoginButton'
+import Home from '@/components/Home'
 import React from 'react'
-
 const page = () => {
   return (
-    <LoginButton/>
+ <>
+  <Home/>
+ </>
   )
 }
 
