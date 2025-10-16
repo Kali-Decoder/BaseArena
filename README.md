@@ -188,7 +188,3 @@ Our ongoing research focuses on several cutting-edge areas:
 ## Conclusion
 
 BaseArena represents a paradigm shift in blockchain gaming infrastructure, combining cutting-edge cryptographic primitives, distributed systems engineering, and game theory to create an unparalleled gaming experience that is secure, scalable, and future-proof.
-
----
-
-*Note: This document describes the theoretical capabilities of BaseArena's architecture. Implementation details and performance metrics are subject to ongoing research and development.*
