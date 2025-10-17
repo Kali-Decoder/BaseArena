@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@2toad/profanity':
+        specifier: ^2.2.0
+        version: 2.5.0
       '@privy-io/react-auth':
         specifier: ^2.17.3
         version: 2.25.0(@solana/web3.js@1.98.4(bufferutil@4.0.9)(encoding@0.1.13)(typescript@5.9.3)(utf-8-validate@5.0.10))(@types/react@19.2.2)(bs58@6.0.0)(bufferutil@4.0.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@18.3.1))(utf-8-validate@5.0.10)(zod@4.1.12)
@@ -20,6 +23,9 @@ importers:
       framer-motion:
         specifier: ^12.23.22
         version: 12.23.24(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      howler:
+        specifier: ^2.2.3
+        version: 2.2.4
       lucide-react:
         specifier: ^0.545.0
         version: 0.545.0(react@18.3.1)
@@ -71,6 +77,10 @@ importers:
         version: 5.9.3
 
 packages:
+
+  '@2toad/profanity@2.5.0':
+    resolution: {integrity: sha512-d3kAz00+scjh3r1m8h3AHt49mBPWiyPhzOwX1sw8dwt15OrG/SCYw3ne/hFnxb4sEOuaMTBCFnHjVck5VVTipQ==}
+    engines: {node: '>=12'}
 
   '@adraffy/ens-normalize@1.11.1':
     resolution: {integrity: sha512-nhCBV3quEgesuf7c7KYfperqSS14T8bYuvJ8PcLJp6znkZpFc0AuW4qBtr8eKVyPPe/8RSr7sglCWPU5eaxwKQ==}
@@ -2233,6 +2243,9 @@ packages:
     resolution: {integrity: sha512-SrTC0YxqPwnN7yKa8gg/giLyQ2pILCKoideIHbYbFQlWZjYt68D2A4Ae1hehO/aDQ6RmTcpqOV/O2yBtMzx/VQ==}
     engines: {node: '>=16.9.0'}
 
+  howler@2.2.4:
+    resolution: {integrity: sha512-iARIBPgcQrwtEr+tALF+rapJ8qSc+Set2GJQl7xT1MQzWaVkFebdJhR3alVlSiUf5U7nAANKuj3aWpwerocD5w==}
+
   humanize-ms@1.2.1:
     resolution: {integrity: sha512-Fl70vYtsAFb/C06PTS9dZBo7ihau+Tu/DNCk/OyHhea07S+aeMWpFFkUaXRa8fI+ScZbEI8dfSxwY7gxZ9SAVQ==}
 
@@ -3920,6 +3933,8 @@ packages:
         optional: true
 
 snapshots:
+
+  '@2toad/profanity@2.5.0': {}
 
   '@adraffy/ens-normalize@1.11.1': {}
 
@@ -7746,7 +7761,7 @@ snapshots:
 
   extension-port-stream@3.0.0:
     dependencies:
-      readable-stream: 3.6.2
+      readable-stream: 4.7.0
       webextension-polyfill: 0.10.0
 
   eyes@0.1.8: {}
@@ -7981,6 +7996,8 @@ snapshots:
       minimalistic-crypto-utils: 1.0.1
 
   hono@4.9.12: {}
+
+  howler@2.2.4: {}
 
   humanize-ms@1.2.1:
     dependencies:
